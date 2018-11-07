@@ -56,7 +56,7 @@ def dataSplit(percent):
     # test_path = "../data/test.csv"
     train_path = "../data/train_0.8.csv"
     test_path = "../data/test_0.2.csv"
-    f = csv.reader(open("../data/data_five_labels.csv","r",encoding="utf-8"))
+    f = csv.reader(open("../data/data.csv","r",encoding="utf-8"))
     disease = []
     position = []
     label = []
@@ -234,5 +234,5 @@ if __name__ == '__main__':
     0.8309329993738259
     """
     dataSplit(percent=0.8)
-    train(maxFeature=21000, minDf=0, maxDf=1.0, ngram=(1, 3))
-    train(maxFeature=21000, minDf=0, maxDf=1.0, ngram=(1, 1))
+    train(maxFeature=21000, minDf=0, maxDf=1.0, ngram=(1, 3),classifier=svm.SVC(kernel="rbf",gamma=0.6))
+    # train(maxFeature=21000, minDf=0, maxDf=1.0, ngram=(1, 1))

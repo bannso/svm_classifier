@@ -11,6 +11,7 @@ print(tfv.get_feature_names())
 all= tfv.transform(
     [" ".join(jieba.cut("SVM分类模型在测试集上的准确率"))," ".join(jieba.cut("本文为博主原创文章，未经博主允许不得转载"))," ".join(jieba.cut("【word2vec实例2】加载模型")),"","测试"]
 )
+print(all)
 for x in all:
     x = x.toarray().tolist()[0]
     for xx in x:
